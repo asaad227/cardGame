@@ -41,17 +41,11 @@ for(let i = 0; i < player.length; i++){
 
 const result =  count.reduce((a, b)=> a+b, 0);
 console.log(result)
-if(result > 0){
-    return "Player Win"
-}
 
-if(result === 0){
-    return "Game has been Draw"
-}
+ return  result? result > 0? "Player Win": "Computer Win" : result === 0? "Draw" : "Draw";
+    
 
-if(result < 0){
-    return "Computer win better luck next time"
-}
+
 }
 
 const cards = ["A", "K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2"]
