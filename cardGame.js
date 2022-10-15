@@ -80,12 +80,35 @@ const cards = [
   "3",
   "2",
 ];
-const i = Math.ceil(Math.random() * 12);
-const d = Math.ceil(Math.random() * 12);
+var playerPick
+function playerP(){
+    const d = Math.ceil(Math.random() * 12);
+    playerPick = [cards[d]];
+    document.querySelector(".playerPick").innerHTML =  `${playerPick}`;
+    console.log(playerPick)
+}
+var computerPick
+function computerP(){
+    const i = Math.ceil(Math.random() * 12);
+    computerPick = [cards[i]];
+    document.querySelector(".computerPick").innerHTML =  `${computerPick}`
+    console.log(computerPick);
+}
 
-const playerPick = [cards[d]];
-console.log(playerPick);
-const computerPick = [cards[i]];
-console.log(computerPick);
+function getResult(){
+    const result = cardGame(playerPick, computerPick)
+    document.querySelector(".result").innerHTML = `${result}`
+    console.log(result);
+}
 
-console.log(cardGame(playerPick, computerPick));
+function reset(){
+    location.reload()
+}
+const btnPlayer = document.querySelector(".playerSelection");
+const btnComputer = document.querySelector(".computerSelection");
+const btnGame = document.querySelector(".cardGame");
+const btnReset = document.querySelector(".reset");
+btnPlayer.addEventListener("click", playerP);
+btnComputer.addEventListener("click", computerP);
+btnGame.addEventListener("click", getResult);
+btnReset.addEventListener("click", reset);
