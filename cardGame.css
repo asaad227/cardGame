@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+}
+
+
+.flex-box{
+    display: flex;
+   
+}
+
+.buttonDiv{
+    display: flex;
+    margin-left: 150px;
+ 
+   
+}
+#table1 {
+    border-collapse: separate;
+  }
+  td{
+    padding-left: 5px;
+  }
+.playerSelection, .computerSelection, .cardGame, .reset{
+    flex-direction: row;
+    margin-top: 10px;
+    margin-left: 30px;
+    width: 100px;
+}
+
+.gameDisplay, .pointTable{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 450px;
+    height: 150px;
+    border: solid 2px red;
+    margin-top: 50px;
+    margin-left: 150px;
+    background-color: bisque;
+}
+
+.playerPick, .computerPick{
+    margin-left: 40px;
+    font-size: larger;
+    font-weight: 800;
+    font-style: oblique;
+}

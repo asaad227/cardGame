@@ -3,6 +3,7 @@ function cardGame(player, computer) {
   const minusSet = ["7", "8", "9", "10"];
   const doubleDown = ["A", "K", "J", "Q"];
   const count = [];
+
   for (let i = 0; i < player.length; i++) {
     const playerPlus = plusSet.includes(player[i]);
     const playerMinus = minusSet.includes(player[i]);
@@ -10,7 +11,7 @@ function cardGame(player, computer) {
     const computerPlus = plusSet.includes(computer[i]);
     const computerMinus = minusSet.includes(computer[i]);
     const computerDouble = doubleDown.includes(computer[i]);
-
+   
     (playerPlus && computerMinus) ||
     (playerDouble && computerPlus) ||
     (playerDouble && computerMinus)
@@ -27,34 +28,12 @@ function cardGame(player, computer) {
       ? count.push(0)
       : count;
 
-    // if(plusSet.includes(player[i]) && plusSet.includes(computer[i])){
-    //     count.push(0)
-    // }
-    // if(minusSet.includes(player[i]) && minusSet.includes(computer[i])){
-    //     count.push(0)
-    // }
-
-    // if(doubleDown.includes(player[i]) && minusSet.includes(computer[i])){
-    //     count.push(2)
-    // }
-    // if(doubleDown.includes(player[i]) && plusSet.includes(computer[i])){
-    //     count.push(2)
-    // }
-
-    // if(doubleDown.includes(computer[i]) && minusSet.includes(player[i])){
-    //     count.push(-2)
-    // }
-    // if(doubleDown.includes(computer[i]) && plusSet.includes(player[i])){
-    //     count.push(-2)
-    // }
-
-    // if(doubleDown.includes(computer[i]) && doubleDown.includes(player[i])){
-    //     count.push(0)
-    // }
+   
   }
 
   const result = count.reduce((a, b) => a + b, 0);
   console.log(result);
+ 
 
   return result
     ? result > 0
@@ -84,31 +63,35 @@ var playerPick
 function playerP(){
     const d = Math.ceil(Math.random() * 12);
     playerPick = [cards[d]];
-    document.querySelector(".playerPick").innerHTML =  `${playerPick}`;
+    document.querySelector(".playerPick").innerHTML =  `Player selection: ${playerPick}`;
     console.log(playerPick)
 }
 var computerPick
 function computerP(){
     const i = Math.ceil(Math.random() * 12);
     computerPick = [cards[i]];
-    document.querySelector(".computerPick").innerHTML =  `${computerPick}`
+    document.querySelector(".computerPick").innerHTML =  `Computer selection: ${computerPick}`
     console.log(computerPick);
 }
 
 function getResult(){
+    computerP()
     const result = cardGame(playerPick, computerPick)
-    document.querySelector(".result").innerHTML = `${result}`
-    console.log(result);
+    document.querySelector(".result").innerHTML = `Result: ${result}`
+   
+   
 }
 
 function reset(){
-    location.reload()
+  document.querySelector(".result").innerHTML = "";
+  document.querySelector(".computerPick").innerHTML =  "";
+  document.querySelector(".playerPick").innerHTML =  "";
 }
 const btnPlayer = document.querySelector(".playerSelection");
-const btnComputer = document.querySelector(".computerSelection");
+
 const btnGame = document.querySelector(".cardGame");
 const btnReset = document.querySelector(".reset");
 btnPlayer.addEventListener("click", playerP);
-btnComputer.addEventListener("click", computerP);
+
 btnGame.addEventListener("click", getResult);
 btnReset.addEventListener("click", reset);
