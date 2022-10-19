@@ -38,6 +38,7 @@ function cardGame(player, computer) {
   }
 
   const result = count.reduce((a, b) => a + b, 0);
+
   
   console.log(result);
   console.log(round, count)
@@ -88,7 +89,6 @@ function getResult(){
 }
 
 function reset(){
-  document.querySelector(".result").innerHTML = "";
   document.querySelector(".computerPick").innerHTML =  "";
   document.querySelector(".playerPick").innerHTML =  "";
 }

@@ -5,6 +5,7 @@ body{
 
 .flex-box{
     display: flex;
+  
    
 }
 
@@ -26,7 +27,17 @@ body{
     margin-left: 30px;
     width: 100px;
 }
-
+.playerSelection{
+    background-color: darkgreen;
+    color: bisque;
+}
+.cardGame{
+background-color: brown;
+color: bisque;
+}
+.reset{
+    background-color: chartreuse;
+}
 .gameDisplay, .pointTable{
     display: flex;
     flex-direction: column;
@@ -36,7 +47,8 @@ body{
     border: solid 2px red;
     margin-top: 50px;
     margin-left: 150px;
-    background-color: bisque;
+    background-color: rgb(74, 107, 135);
+    color: bisque;
 }
 
 .playerPick, .computerPick{
@@ -45,3 +57,4 @@ body{
     font-weight: 800;
     font-style: oblique;
 }
+
