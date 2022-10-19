@@ -21,35 +21,28 @@ function cardGame(player, computer) {
     (playerPlus && computerMinus) ||
     (playerDouble && computerPlus) ||
     (playerDouble && computerMinus)
-      ? count.push(1)&& round.push(1)
+      ? count.push(1)
       : count;
     (computerPlus && playerMinus) ||
     (computerDouble && playerPlus) ||
     (computerDouble && playerMinus)
-      ? count.push(-1)&& round.push(1)
+      ? count.push(-1)
       : count;
     (playerDouble && computerDouble) ||
     (playerMinus && computerMinus) ||
     (playerPlus && computerPlus)
-      ? count.push(0)&& round.push(1)
+      ? count.push(0)
       : count;
 
-   
+   round.push(1)
   }
 
   const result = count.reduce((a, b) => a + b, 0);
+  
   console.log(result);
   console.log(round, count)
   document.querySelector(".round").innerHTML= round? `Round: ${round.length}`:`Round: 0`;
-  document.querySelector(".total").innerHTML= count? `Score: ${result}`: `Score: 0`;
-
-  return result
-    ? result > 0
-      ? "Player Win"
-      : "Computer Win"
-    : result === 0
-    ? "Draw"
-    : "Draw";
+  document.querySelector(".total").innerHTML= count? `Player Score: ${result}`: `Score: 0`; 
 }
 
 const cards = [
@@ -69,23 +62,27 @@ const cards = [
 ];
 
 function playerP(){
-    const d = Math.ceil(Math.random() * 12);
-    playerPick = [cards[d]];
+    const a = Math.ceil(Math.random() * 12);
+    const b = Math.ceil(Math.random() * 12);
+  const c = Math.ceil(Math.random() * 12);
+    playerPick = [cards[a],cards[b],cards[c]];
     document.querySelector(".playerPick").innerHTML =  `Player selection: ${playerPick}`;
  
 }
 
 function computerP(){
-    const i = Math.ceil(Math.random() * 12);
-    computerPick = [cards[i]];
+  const a = Math.ceil(Math.random() * 12);
+  const b = Math.ceil(Math.random() * 12);
+  const c = Math.ceil(Math.random() * 12);
+    computerPick = [cards[a],cards[b],cards[c]];
     document.querySelector(".computerPick").innerHTML =  `Computer selection: ${computerPick}`
    
 }
 
 function getResult(){
     computerP()
-    const result = cardGame(playerPick, computerPick)
-    document.querySelector(".result").innerHTML = `Result: ${result}`
+  cardGame(playerPick, computerPick)
+
    
    
 }
