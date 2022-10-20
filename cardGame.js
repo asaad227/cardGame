@@ -1,4 +1,4 @@
-var round = [];
+var round = 0;
 var count = [];
 // its need to declared outside the function scope to keep adding up the score and round
 var playerPick;
@@ -34,16 +34,18 @@ function cardGame(player, computer) {
       ? count.push(0)
       : count;
 
-   round.push(1)
+ 
+ 
   }
 
-  const result = count.reduce((a, b) => a + b, 0);
 
-  
+  round++
+
+  const result = count.reduce((a, b) => a + b, 0);
   console.log(result);
-  console.log(round, count)
-  document.querySelector(".round").innerHTML= round? `Round: ${round.length}`:`Round: 0`;
-  document.querySelector(".total").innerHTML= count? `Player Score: ${result}`: `Score: 0`; 
+
+  document.querySelector(".round").innerHTML= `Round ${round}`; 
+  document.querySelector(".total").innerHTML= `Player Score: ${result}`; 
 }
 
 const cards = [
