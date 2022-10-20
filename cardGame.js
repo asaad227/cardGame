@@ -44,8 +44,19 @@ function cardGame(player, computer) {
   const result = count.reduce((a, b) => a + b, 0);
   console.log(result);
 
-  document.querySelector(".round").innerHTML= `Round ${round}`; 
+  document.querySelector(".round").innerHTML= `Game Round: ${round}`; 
   document.querySelector(".total").innerHTML= `Player Score: ${result}`; 
+}
+
+function handleUserName() {
+  var input = document.querySelector(".userNameInput");
+  var display = document.querySelector(".userNameDisplay");
+
+  if (input.value !== "") {
+    display.innerText =`Player Name: ${input.value}`;
+  } else {
+    alert("Invalid username");
+  }
 }
 
 const cards = [
@@ -90,15 +101,23 @@ function getResult(){
    
 }
 
-function reset(){
+function next(){
   document.querySelector(".computerPick").innerHTML =  "";
   document.querySelector(".playerPick").innerHTML =  "";
 }
 
+function reset(){
+  location.reload()
+}
+
 const btnPlayer = document.querySelector(".playerSelection");
 const btnGame = document.querySelector(".cardGame");
+const btnNext = document.querySelector(".next");
 const btnReset = document.querySelector(".reset");
+const userNameBtn = document.querySelector(".userNameBtn");
 btnPlayer.addEventListener("click", playerP);
 btnGame.addEventListener("click", getResult);
+btnNext.addEventListener("click", next);
 btnReset.addEventListener("click", reset);
+userNameBtn.addEventListener("click", handleUserName);
 

@@ -1,12 +1,13 @@
 body{
     margin: 0;
 }
-
+.mainDiv{
+    display: block;
+    align-items: center;
+}
 
 .flex-box{
-    display: flex;
-  
-   
+    display: flex;  
 }
 
 .buttonDiv{
@@ -15,16 +16,17 @@ body{
  
    
 }
+
 #table1 {
     border-collapse: separate;
   }
   td{
     padding-left: 5px;
   }
-.playerSelection, .computerSelection, .cardGame, .reset{
+.playerSelection, .computerSelection, .cardGame, .next, .reset{
     flex-direction: row;
     margin-top: 10px;
-    margin-left: 30px;
+    margin-left: 25px;
     width: 100px;
 }
 .playerSelection{
@@ -35,17 +37,24 @@ body{
 background-color: brown;
 color: bisque;
 }
+h3, h4, p{
+    padding-left: 10px;
+}
 .reset{
     background-color: chartreuse;
+}
+.next{
+    background-color: blue;
+    color: beige;
 }
 .gameDisplay, .pointTable{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 450px;
-    height: 150px;
+    width: 600px;
+    height: 300px;
     border: solid 2px red;
-    margin-top: 50px;
+    margin-top:10px;
     margin-left: 150px;
     background-color: rgb(74, 107, 135);
     color: bisque;

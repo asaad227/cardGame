@@ -1,43 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./cardGame.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./cardGame.css" />
     <title>CardGame</title>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="mainDiv">
     <div class="pointTable">
+        <h4>
+          Enter Your Name: <input class="userNameInput" type="text" />
+          <button class="userNameBtn">Submit</button>
+          <p class="userNameDisplay">Player Name: </p>
+          <p class="round">Game Round: </p>
+          <p class="total">Player Score: </p>
+        </h4>
         <table id="table1">
-            <tr>
-              <th>Point [1] </th>
-              <th>Point [2] </th>
-              <th>Point [-1] </th>
-            </tr>
-            <tr>
-              <td>Cards [2],[3],[4],[5],[6]</td>
-              <td>Cards [A],[K],[Q],[J] </td>
-              <td>Cards [7],[8],[9],[10]</td>
-            </tr>
-         
-          </table>
- 
-</div>
+            <h4>Point Table</h4>
+          <tr>
+            <th>Point [1]</th>
+            <th>Point [2]</th>
+            <th>Point [-1]</th>
+          </tr>
+          <tr>
+            <td>Cards [2],[3],[4],[5],[6]</td>
+            <td>Cards [A],[K],[Q],[J]</td>
+            <td>Cards [7],[8],[9],[10]</td>
+          </tr>
+        </table>
+    </div>
     <div class="flex-box">
-        <div class="gameDisplay">
-            <p class="playerPick"></p>
-            <p class="computerPick"></p>
-            <h4 class="result"></h4>
-            <h4 class="round"></h4>
-            <h4 class="total"></h4>
-        </div>
+      <div class="gameDisplay">
+        <p class="playerPick"></p>
+        <p class="computerPick"></p>
+        <h4 class="result"></h4>
+      </div>
+    </div>
+    <div class="buttonDiv">
+      <button class="playerSelection">Get player Card</button>
+      <button class="cardGame">Show and Result</button>
+      <button class="next">Next Round</button>
+      <button class="reset">Game Reset</button>
+    </div>
 </div>
-<div class="buttonDiv">
-    <button class="playerSelection">Get player Card</button>
-    <button class="cardGame">Show and Result</button>
-    <button class="reset">Reset</button>
-</div>
-</body>
-<script src="./cardGame.js"></script>
+  </body>
+  <script src="./cardGame.js"></script>
 </html>
