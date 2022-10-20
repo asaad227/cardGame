@@ -1,5 +1,6 @@
 var round = 0;
 var count = [];
+var game = 0;
 // its need to declared outside the function scope to keep adding up the score and round
 var playerPick;
 var computerPick;
@@ -46,7 +47,22 @@ function cardGame(player, computer) {
   console.log(result);
 
   document.querySelector(".round").innerHTML= `Game Round: ${round}`; 
-  document.querySelector(".total").innerHTML= `Player Score: ${result}`; 
+ 
+  if(result > 0){
+    document.querySelector(".result").innerHTML =`Result: Player Win`
+    game++
+  }
+
+  if(result === 0){
+    document.querySelector(".result").innerHTML = `Result: Draw`;
+    game+0
+  }
+
+  if(result < 0){
+    document.querySelector(".result").innerHTML = `Result: Computer win`;
+    game--
+  }
+  document.querySelector(".total").innerHTML= `Player Score: ${game}`; 
 }
 
 function handleUserName() {
@@ -83,8 +99,8 @@ function playerP(){
     const a = Math.ceil(Math.random() * 12);
     const b = Math.ceil(Math.random() * 12);
     const c = Math.ceil(Math.random() * 12);
-    playerPick = [cards[a],cards[b],cards[c]];
-    document.querySelector(".playerPick").innerHTML =  `Player selection: ${playerPick}`;
+    playerPick = [cards[a], cards[b], cards[c]];
+    document.querySelector(".playerPick").innerHTML =  `Player pick: ${playerPick}`;
  
   }
    
@@ -95,7 +111,7 @@ function computerP(){
   const b = Math.ceil(Math.random() * 12);
   const c = Math.ceil(Math.random() * 12);
     computerPick = [cards[a],cards[b],cards[c]];
-    document.querySelector(".computerPick").innerHTML =  `Computer selection: ${computerPick}`
+    document.querySelector(".computerPick").innerHTML =  `Computer pick: ${computerPick}`
    
 }
 
@@ -111,8 +127,9 @@ function getResult(){
 }
 
 function next(){
-  document.querySelector(".computerPick").innerHTML =  "";
-  document.querySelector(".playerPick").innerHTML =  "";
+  document.querySelector(".result").innerHTML = `Result: `;
+  document.querySelector(".computerPick").innerHTML =  `Computer pick: `;
+  document.querySelector(".playerPick").innerHTML =  `Player pick: `;
 }
 
 function reset(){

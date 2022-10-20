@@ -12,9 +12,24 @@ body{
 
 .buttonDiv{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 600px;
+    border: solid 2px red;
+    margin-top:10px;
     margin-left: 150px;
+    background-color: rgb(60, 76, 90);
+    color: bisque
  
    
+}
+.userNameDisplay, .round, .total{
+    width: 300px;
+}
+
+.userNameDisplay{
+    background-color: bisque;
+    color: rgba(15, 61, 15, 0.822);
 }
 
 #table1 {
@@ -25,15 +40,16 @@ body{
   }
 .playerSelection, .computerSelection, .cardGame, .next, .reset{
     flex-direction: row;
-    margin-top: 10px;
-    margin-left: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 40px;
     width: 100px;
 }
 .playerSelection{
     background-color: darkgreen;
     color: bisque;
 }
-.cardGame{
+.cardGame, .total{
 background-color: brown;
 color: bisque;
 }
@@ -43,7 +59,7 @@ h3, h4, p{
 .reset{
     background-color: chartreuse;
 }
-.next{
+.next, .round{
     background-color: blue;
     color: beige;
 }
@@ -56,14 +72,37 @@ h3, h4, p{
     border: solid 2px red;
     margin-top:10px;
     margin-left: 150px;
-    background-color: rgb(74, 107, 135);
+    background-color: rgb(60, 76, 90);
     color: bisque;
 }
 
 .playerPick, .computerPick{
-    margin-left: 40px;
-    font-size: larger;
+    margin-left: 10px;
+    width: 300px;
+    font-size: xx-large;
     font-weight: 800;
     font-style: oblique;
 }
+.result{
+    margin-left: 10px;
+    width: 300px;
+    font-size: larger;
+    font-weight: 800;
+    font-style: oblique; 
+}
 
+.playerPick{
+    background-color: bisque;
+    color: rgb(114, 199, 28);
+}
+
+.computerPick{
+   
+    background-color: black;
+    color: rgb(220, 14, 14);
+}
+
+.result{
+    background-color: cadetblue;
+    color: blue;
+}
