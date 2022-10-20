@@ -3,6 +3,7 @@ var count = [];
 // its need to declared outside the function scope to keep adding up the score and round
 var playerPick;
 var computerPick;
+var input;
 
 function cardGame(player, computer) {
   const plusSet = ["2", "3", "4", "5", "6"];
@@ -49,7 +50,7 @@ function cardGame(player, computer) {
 }
 
 function handleUserName() {
-  var input = document.querySelector(".userNameInput");
+  input = document.querySelector(".userNameInput");
   var display = document.querySelector(".userNameDisplay");
 
   if (input.value !== "") {
@@ -76,12 +77,17 @@ const cards = [
 ];
 
 function playerP(){
+  if(!input){
+    alert("Please enter your name")
+  }else{
     const a = Math.ceil(Math.random() * 12);
     const b = Math.ceil(Math.random() * 12);
-  const c = Math.ceil(Math.random() * 12);
+    const c = Math.ceil(Math.random() * 12);
     playerPick = [cards[a],cards[b],cards[c]];
     document.querySelector(".playerPick").innerHTML =  `Player selection: ${playerPick}`;
  
+  }
+   
 }
 
 function computerP(){
@@ -94,11 +100,14 @@ function computerP(){
 }
 
 function getResult(){
+  if(!playerPick){
+    alert("Please pick your card first")
+  }else{
     computerP()
-  cardGame(playerPick, computerPick)
+    cardGame(playerPick, computerPick)
+  }
 
-   
-   
+  
 }
 
 function next(){
