@@ -1,6 +1,8 @@
 var round = 0;
 var count = [];
-var game = 0;
+var playerWin = 0;
+var computerWin = 0;
+var draw = 0;
 // its need to declared outside the function scope to keep adding up the score and round
 var playerPick;
 var computerPick;
@@ -10,59 +12,78 @@ function cardGame(player, computer) {
   const plusSet = ["2", "3", "4", "5", "6"];
   const minusSet = ["7", "8", "9", "10"];
   const doubleDown = ["A", "K", "J", "Q"];
- 
-
+  let playerPlus, playerMinus, computerPlus, computerMinus, playerDouble, computerDouble;
   for (let i = 0; i < player.length; i++) {
-    const playerPlus = plusSet.includes(player[i]);
-    const playerMinus = minusSet.includes(player[i]);
-    const playerDouble = doubleDown.includes(player[i]);
-    const computerPlus = plusSet.includes(computer[i]);
-    const computerMinus = minusSet.includes(computer[i]);
-    const computerDouble = doubleDown.includes(computer[i]);
-   
+  playerPlus = plusSet.includes(player[i]);
+  playerMinus = minusSet.includes(player[i]);
+  playerDouble = doubleDown.includes(player[i]);
+  computerPlus = plusSet.includes(computer[i]);
+  computerMinus = minusSet.includes(computer[i]);
+  computerDouble = doubleDown.includes(computer[i]);
+
+    (playerPlus && computerPlus) ||
+    (playerMinus && computerMinus) ||
+    (playerDouble && computerDouble)
+      ? draw++
+      : count;
     (playerPlus && computerMinus) ||
     (playerDouble && computerPlus) ||
     (playerDouble && computerMinus)
-      ? count.push(1)
+      ? playerWin++
       : count;
-    (computerPlus && playerMinus) ||
-    (computerDouble && playerPlus) ||
-    (computerDouble && playerMinus)
-      ? count.push(-1)
+    (playerPlus && computerDouble) ||
+    (playerMinus && computerPlus) ||
+    (playerMinus && computerDouble)
+      ? computerWin++
       : count;
-    (playerDouble && computerDouble) ||
-    (playerMinus && computerMinus) ||
-    (playerPlus && computerPlus)
-      ? count.push(0)
-      : count;
+      if(plusSet.includes(player[i])){
+        document.querySelector(".singlePoint").style.color = "green";
+        document.querySelector(".pointOne").style = `color:green;`;
 
- 
- 
+      }
+      if(minusSet.includes(player[i])){
+        document.querySelector(".minusPoint").style.color = "green";
+        document.querySelector(".pointMinus").style = ` color: green;`; 
+      }
+      if(doubleDown.includes(player[i])){
+        document.querySelector(".double").style.color = "green"
+        document.querySelector(".pointTwo").style = ` color: green;`; 
+      }
+      if(plusSet.includes(computer[i])){
+        document.querySelector(".singlePoint").style.color = "red";
+        document.querySelector(".pointOne").style = ` color: red;`; 
+      }
+      if(minusSet.includes(computer[i])){
+        document.querySelector(".minusPoint").style.color = "red";
+        document.querySelector(".pointMinus").style = ` color: red;`; 
+      }
+      if(doubleDown.includes(computer[i])){
+        document.querySelector(".double").style.color = "red";
+        document.querySelector(".pointTwo").style =` color: red;`; 
+      }
+      if(doubleDown.includes(computer[i])&&doubleDown.includes(player[i])){
+        document.querySelector(".double").style.color = "purple";
+        document.querySelector(".pointTwo").style= ` color: purple;`; 
+      }
+      if(plusSet.includes(computer[i])&&plusSet.includes(player[i])){
+        document.querySelector(".singlePoint").style.color = "purple";
+        document.querySelector(".pointOne").style= ` color: purple;`; 
+      }
+      if(minusSet.includes(computer[i])&&minusSet.includes(player[i])){
+        document.querySelector(".minusPoint").style.color = "purple";
+        document.querySelector(".pointMinus").style =`font-size: xx-larger ; color: purple;`; 
+      }
   }
 
+  round++;
 
-  round++
+  document.querySelector(".round").innerHTML = `Game Round: ${round}`;
+  document.querySelector(".playerWin").innerHTML = `Player win: ${playerWin}`;
+  document.querySelector(".computerWin").innerHTML = `Computer win: ${computerWin}`;
+  document.querySelector(".draw").innerHTML = `Draw: ${draw}`;
 
-  const result = count.reduce((a, b) => a + b, 0);
-  console.log(result);
 
-  document.querySelector(".round").innerHTML= `Game Round: ${round}`; 
- 
-  if(result > 0){
-    document.querySelector(".result").innerHTML =`Result: Player Win`
-    game++
-  }
 
-  if(result === 0){
-    document.querySelector(".result").innerHTML = `Result: Draw`;
-    game+0
-  }
-
-  if(result < 0){
-    document.querySelector(".result").innerHTML = `Result: Computer win`;
-    game--
-  }
-  document.querySelector(".total").innerHTML= `Player Score: ${game}`; 
 }
 
 function handleUserName() {
@@ -70,7 +91,7 @@ function handleUserName() {
   var display = document.querySelector(".userNameDisplay");
 
   if (input.value !== "") {
-    display.innerText =`Player Name: ${input.value}`;
+    display.innerText = `Player Name: ${input.value}`;
   } else {
     alert("Invalid username");
   }
@@ -92,48 +113,58 @@ const cards = [
   "2",
 ];
 
-function playerP(){
-  if(!input){
-    alert("Please enter your name")
-  }else{
+function playerP() {
+  if (!input) {
+    alert("Please enter your name");
+  } else {
     const a = Math.ceil(Math.random() * 12);
-    const b = Math.ceil(Math.random() * 12);
-    const c = Math.ceil(Math.random() * 12);
-    playerPick = [cards[a], cards[b], cards[c]];
-    document.querySelector(".playerPick").innerHTML =  `Player pick: ${playerPick}`;
- 
+    // const b = Math.ceil(Math.random() * 12);
+    // const c = Math.ceil(Math.random() * 12);
+    playerPick = [cards[a]];
+    document.querySelector(
+      ".playerPick"
+    ).innerHTML = `${playerPick}`;
   }
-   
 }
 
-function computerP(){
+function computerP() {
   const a = Math.ceil(Math.random() * 12);
-  const b = Math.ceil(Math.random() * 12);
-  const c = Math.ceil(Math.random() * 12);
-    computerPick = [cards[a],cards[b],cards[c]];
-    document.querySelector(".computerPick").innerHTML =  `Computer pick: ${computerPick}`
-   
+  // const b = Math.ceil(Math.random() * 12);
+  // const c = Math.ceil(Math.random() * 12);
+  computerPick = [cards[a]];
+  document.querySelector(
+    ".computerPick"
+  ).innerHTML = `${computerPick}`;
 }
 
-function getResult(){
-  if(!playerPick){
-    alert("Please pick your card first")
-  }else{
-    computerP()
-    cardGame(playerPick, computerPick)
+function getResult() {
+  if (!playerPick) {
+    alert("Please pick your card first");
+  } else {
+    computerP();
+    cardGame(playerPick, computerPick);
   }
+}
 
+function next() {
+  if(!playerPick || !computerPick){
+    alert("Play game before going to next round")
+  }else{
+    document.querySelector(".pointOne").style = ``;
+    document.querySelector(".pointTwo").style = ``;
+    document.querySelector(".pointMinus").style= ``;
+    document.querySelector(".computerPick").innerHTML = ` `;
+    document.querySelector(".playerPick").innerHTML = ``;
+    document.querySelector(".singlePoint").style.color = ``;
+    document.querySelector(".minusPoint").style.color = ``;
+    document.querySelector(".double").style.color = ``;
+  }
   
+
 }
 
-function next(){
-  document.querySelector(".result").innerHTML = `Result: `;
-  document.querySelector(".computerPick").innerHTML =  `Computer pick: `;
-  document.querySelector(".playerPick").innerHTML =  `Player pick: `;
-}
-
-function reset(){
-  location.reload()
+function reset() {
+  location.reload();
 }
 
 const btnPlayer = document.querySelector(".playerSelection");
@@ -146,4 +177,3 @@ btnGame.addEventListener("click", getResult);
 btnNext.addEventListener("click", next);
 btnReset.addEventListener("click", reset);
 userNameBtn.addEventListener("click", handleUserName);
-

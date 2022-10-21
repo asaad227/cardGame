@@ -15,29 +15,35 @@
           <button class="userNameBtn">Submit</button>
           <p class="userNameDisplay">Player Name: </p>
           <p class="round">Game Round: </p>
-          <p class="total">Player Score: </p>
+          <p class="playerWin">Player Win: </p>
+          <p class="computerWin">Computer Win: </p>
+          <p class="draw">Draw: </p>
+    
         </h4>
         <table id="table1">
-            <h4>Point Table</h4>
+            <h4 class="tableHeading">Point Table</h4>
           <tr>
-            <th>Point [1]</th>
-            <th>Point [2]</th>
-            <th>Point [-1]</th>
+            <th class="pointOne">Point [1]</th>
+            <th class="pointTwo">Point [2]</th>
+            <th class="pointMinus">Point [-1]</th>
           </tr>
           <tr>
-            <td>Cards [2],[3],[4],[5],[6]</td>
-            <td>Cards [A],[K],[Q],[J]</td>
-            <td>Cards [7],[8],[9],[10]</td>
+            <td class="singlePoint">Cards [2],[3],[4],[5],[6]</td>
+            <td class="double">Cards [A],[K],[Q],[J]</td>
+            <td class="minusPoint">Cards [7],[8],[9],[10]</td>
           </tr>
         </table>
     </div>
-    <div class="flex-box">
       <div class="gameDisplay">
-        <p class="result">Result</p>
-        <p class="playerPick">Player pick: </p>
-        <p class="computerPick">Computer pick: </p>
+     <h4 class="playerHeader">Player Pick
+        <p class="playerPick"></p>
+     </h4>
+        
+        <h4 class="computerHeader">Computer Pick
+            <p class="computerPick"></p>
+        </h4>
        
-      </div>
+    
     </div>
     <div class="buttonDiv">
       <button class="playerSelection">Get player Cards</button>

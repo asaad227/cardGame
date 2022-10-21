@@ -9,13 +9,18 @@ body{
 .flex-box{
     display: flex;  
 }
+.playerHeader, .computerHeader{
+font-style: oblique;
+font-size: large;
+text-align: center;
+}
 
 .buttonDiv{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 600px;
-    border: solid 2px red;
+    border: solid 4px rgba(255, 0, 0, 0.527);
     margin-top:10px;
     margin-left: 150px;
     background-color: rgb(60, 76, 90);
@@ -23,20 +28,31 @@ body{
  
    
 }
+
+.userNameInput, .userNameBtn{
+    border-radius: 5px;
+}
+.userNameDisplay{
+    text-transform: capitalize;
+}
 .userNameDisplay, .round, .total{
-    width: 300px;
+    width: 350px;
+    border-radius: 5px;
 }
 
 .userNameDisplay{
     background-color: bisque;
     color: rgba(15, 61, 15, 0.822);
 }
-
+.tableHeading{
+    background-color: brown;
+}
 #table1 {
     border-collapse: separate;
   }
   td{
-    padding-left: 5px;
+    font-size: large;
+    padding: 5px;
   }
 .playerSelection, .computerSelection, .cardGame, .next, .reset{
     flex-direction: row;
@@ -44,17 +60,30 @@ body{
     margin-bottom: 5px;
     margin-left: 40px;
     width: 100px;
+    border-radius: 5px;
 }
 .playerSelection{
     background-color: darkgreen;
     color: bisque;
 }
-.cardGame, .total{
+.cardGame, .computerWin{
 background-color: brown;
 color: bisque;
 }
+
+.playerWin{
+    background-color: green;
+}
+.draw{
+    background-color: bisque;
+    color:rgba(15, 61, 15, 0.822)
+}
+.draw, .computerWin, .playerWin{
+    width: 350px;
+    border-radius: 5px;
+}
 h3, h4, p{
-    padding-left: 10px;
+    padding-left: 40px;
 }
 .reset{
     background-color: chartreuse;
@@ -63,41 +92,53 @@ h3, h4, p{
     background-color: blue;
     color: beige;
 }
-.gameDisplay, .pointTable{
+.pointTable{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     width: 600px;
-    height: 300px;
-    border: solid 2px red;
-    margin-top:10px;
+    height: 400px;
+    border: solid 4px rgba(255, 0, 0, 0.527);
+    margin-top:15px;
     margin-left: 150px;
     background-color: rgb(60, 76, 90);
     color: bisque;
 }
 
+.gameDisplay{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 600px;
+    border: solid 4px rgba(255, 0, 0, 0.527);
+    margin-top:10px;
+    margin-left: 150px;
+    background-color: rgb(60, 76, 90);
+    color: bisque;
+    height: 200px;
+}
+
+
+
 .playerPick, .computerPick{
-    margin-left: 10px;
-    width: 300px;
+    width: 150px;
+    padding-right: 20px;
     font-size: xx-large;
     font-weight: 800;
-    font-style: oblique;
-}
-.result{
-    margin-left: 10px;
-    width: 300px;
-    font-size: larger;
-    font-weight: 800;
     font-style: oblique; 
+    border-radius: 5px;
+    text-align: center;
+    
 }
 
 .playerPick{
+    display: block;
     background-color: bisque;
     color: rgb(114, 199, 28);
 }
 
 .computerPick{
-   
+   display: block;
     background-color: black;
     color: rgb(220, 14, 14);
 }
