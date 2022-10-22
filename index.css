@@ -23,9 +23,9 @@ margin: 20px;
     flex-direction: row;
     border: solid 4px rgba(30, 255, 0, 0.305);
     width: 350px;
-    height: 180px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    height: 225px;
+    margin-bottom: 20px;
+    margin-top: 50px;
     background-color: rgb(60, 76, 90);
     color: bisque
 }
@@ -96,10 +96,8 @@ color: bisque;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    border-radius: 10px;
-    margin: 50px;
     width: 360px;
-    height: 650px;
+    height: 748px;
     border: solid 4px rgba(255, 0, 0, 0.527);
     background-color: rgb(60, 76, 90);
     color: bisque;
@@ -134,10 +132,10 @@ color: bisque;
     color: blue;
 }
 
-@media screen and (max-screen: 480px) {
+@media screen and (max-screen: 360px) {
     .pointTable{
         width: 360px;
-        height: 760px;
+        height: 750px;
      
     }
     
