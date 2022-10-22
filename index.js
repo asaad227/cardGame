@@ -121,7 +121,7 @@ function playerP() {
     // const b = Math.ceil(Math.random() * 12);
     // const c = Math.ceil(Math.random() * 12);
     playerPick = [cards[a]];
-    document.querySelector(
+    return document.querySelector(
       ".playerPick"
     ).innerHTML = `${playerPick}`;
   }
@@ -131,6 +131,7 @@ function computerP() {
   const a = Math.ceil(Math.random() * 12);
   // const b = Math.ceil(Math.random() * 12);
   // const c = Math.ceil(Math.random() * 12);
+  
   computerPick = [cards[a]];
   document.querySelector(
     ".computerPick"

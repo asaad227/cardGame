@@ -8,11 +8,10 @@
     <title>CardGame</title>
   </head>
   <body>
-    <div class="mainDiv">
     <div class="pointTable">
         <h4>
-          Enter Your Name: <input class="userNameInput" type="text" />
-          <button class="userNameBtn">Submit</button>
+         <input class="userNameInput" placeholder="Enter your name!!" type="text" />
+          <button class="userNameBtn">Lets Play</button>
           <p class="userNameDisplay">Player Name: </p>
           <p class="round">Game Round: </p>
           <p class="playerWin">Player Win: </p>
@@ -33,25 +32,24 @@
             <td class="minusPoint">Cards [7],[8],[9],[10]</td>
           </tr>
         </table>
+        <div class="gameShow">
+          <h4 class="playerHeader">Player Pick
+            <p class="playerPick"></p>
+         </h4>
+            
+            <h4 class="computerHeader">Computer Pick
+                <p class="computerPick"></p>
+            </h4>
+        </div>
+        <div class="buttonDiv">
+          <button class="playerSelection">Get player Cards</button>
+          <button class="cardGame">Show and Result</button>
+          <button class="next">Next Round</button>
+          <button class="reset">Game Reset</button>
+        </div>
+      
     </div>
-      <div class="gameDisplay">
-     <h4 class="playerHeader">Player Pick
-        <p class="playerPick"></p>
-     </h4>
-        
-        <h4 class="computerHeader">Computer Pick
-            <p class="computerPick"></p>
-        </h4>
-       
-    
-    </div>
-    <div class="buttonDiv">
-      <button class="playerSelection">Get player Cards</button>
-      <button class="cardGame">Show and Result</button>
-      <button class="next">Next Round</button>
-      <button class="reset">Game Reset</button>
-    </div>
-</div>
+   
   </body>
   <script src="./index.js"></script>
 </html>
