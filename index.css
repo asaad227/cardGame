@@ -23,7 +23,7 @@ margin: 20px;
     flex-direction: row;
     border: solid 4px rgba(30, 255, 0, 0.305);
     width: 350px;
-    height: 225px;
+    height: 200px;
     margin-bottom: 20px;
     margin-top: 50px;
     background-color: rgb(60, 76, 90);
@@ -97,7 +97,7 @@ color: bisque;
     flex-wrap: wrap;
     align-items: center;
     width: 360px;
-    height: 748px;
+    height: 740px;
     border: solid 4px rgba(255, 0, 0, 0.527);
     background-color: rgb(60, 76, 90);
     color: bisque;
@@ -135,7 +135,7 @@ color: bisque;
 @media screen and (max-screen: 360px) {
     .pointTable{
         width: 360px;
-        height: 750px;
+        height: 740px;
      
     }
     
