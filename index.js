@@ -95,6 +95,7 @@ function handleUserName() {
   } else {
     alert("Invalid username");
   }
+  input.value = ``;
 }
 
 const cards = [
@@ -151,6 +152,7 @@ function next() {
   if(!playerPick || !computerPick){
     alert("Play game before going to next round")
   }else{
+    
     document.querySelector(".pointOne").style = ``;
     document.querySelector(".pointTwo").style = ``;
     document.querySelector(".pointMinus").style= ``;

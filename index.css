@@ -2,6 +2,11 @@ body{
     margin: 0;
 }
 
+.divMain{
+    display: flex;
+    padding: 50px;
+    justify-content: space-around;
+}
 
 .playerHeader, .computerHeader{
 font-style: oblique;
@@ -23,9 +28,9 @@ margin: 20px;
     flex-direction: row;
     border: solid 4px rgba(30, 255, 0, 0.305);
     width: 350px;
-    height: 200px;
+    height: 175px;
     margin-bottom: 20px;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     background-color: rgb(60, 76, 90);
     color: bisque
 }
@@ -97,7 +102,7 @@ color: bisque;
     flex-wrap: wrap;
     align-items: center;
     width: 360px;
-    height: 740px;
+    height: 640px;
     border: solid 4px rgba(255, 0, 0, 0.527);
     background-color: rgb(60, 76, 90);
     color: bisque;
@@ -135,7 +140,7 @@ color: bisque;
 @media screen and (max-screen: 360px) {
     .pointTable{
         width: 360px;
-        height: 740px;
+        height: 640px;
      
     }
     
